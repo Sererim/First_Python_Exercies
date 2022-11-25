@@ -1,19 +1,19 @@
 from COLOR import Color
-
-# Find the position of the point in 2D space
-# All possible values of points in specific quadrant of the plane
-# Example
-#       ^
-#  II   |       I Quadrant
-#       |
-#       |       (*) A (5;6)
-# ------+--------->
-#       |
-#  III  |       IV
-#       |
-#       
-# (*) A with coordinates (5;6) is in the first quadrant
-
+"""
+ Find the position of the point in 2D space
+ All possible values of points in specific quadrant of the plane
+ Example
+       ^
+  II   |       I Quadrant
+       |
+       |       (*) A (5;6)
+ ------+--------->
+       |
+  III  |       IV
+       |
+       
+(*) A with coordinates (5;6) is in the first quadrant
+"""
 
 class Plane:
     @staticmethod
