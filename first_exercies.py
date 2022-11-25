@@ -1,7 +1,4 @@
-class Color:
-    WARNING = '\033[41m'
-    END = '\033[0m'
-
+from COLOR import Color
 
 class DayOfTheWeek:
     def __init__(self, day):
