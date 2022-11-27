@@ -15,6 +15,7 @@ from COLOR import Color
 (*) A with coordinates (5;6) is in the first quadrant
 """
 
+
 class Plane:
     @staticmethod
     def findquadrant(x, y):
