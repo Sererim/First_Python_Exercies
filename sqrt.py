@@ -10,7 +10,7 @@ class Sqrt:
 
     @staticmethod
     def root(x, x0=10):
-        out = [x0]
+        out = [Sqrt.modulus(x0-x)]
         tick = 0
         while True:
             out.append(0.5*(out[tick] + x/out[tick]))

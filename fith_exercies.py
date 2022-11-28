@@ -1,44 +1,30 @@
-from COLOR import Color
 from sqrt import Sqrt
 
 
-class Errors:
-    @staticmethod
-    def zero(A, B):
-        if A[0] == B[0] and A[1] == B[1]:
-            print(f"{Color.WARNING}ERROR{Color.END}\n"
-                  f"Answer is 0. Did you mistype ?")
-            return False
-
-
 class Distance:
-    def __init__(self, a, b):
-        self.A = a
-        self.B = b
 
-    def getdistance(self):
-        s = (self.A[1] - self.A[0])**2
-        s += (self.B[1] - self.B[0])**2
-        return Sqrt.root(s, Sqrt.modulus(self.A[0]))
+    @staticmethod
+    def getdistance(x1, y1, x2, y2, s=None):
+        s = (x2 - x1)**2
+        s += (y2 - y1)**2
+        s = Sqrt.root(s)
+        return s
 
 
 def main():
-    control = ""
-    A = []
-    B = []
     while True:
-        print("Program is running.\n")
-        for x in range(0, 2):
-            A.append(int(input(f"Enter x{x} for A point.\n")))
-        for y in range(0, 2):
-            B.append(int(input(f"Enter y{y} for B point.\n")))
-        if Errors.zero(A, B):
-            main()
-        d = Distance(A, B)
-        print(f"The distance between points: \n"
-              f"A ({A[0]},{A[1]}) and B ({B[0]},{B[1]})\n"
-              f"is {d.getdistance()}\n")
-        control = str(input("To terminate the program enter Y or y.\n"))
+        print("Program is running", end="\n")
+        get = []
+        for i in range(0, 4):
+            if i == 0 or i == 1:
+                get.append(int(input("Enter coordinates of the point A (x1, y1).\n")))
+            elif i == 2 or i == 3:
+                get.append(int(input("Enter coordinates of the point B (x2, y2).\n")))
+        print(f"Distance between point A ({get[0]}, {get[1]})"
+              f" and point B ({get[2], get[3]}) is:\n"
+              f"{Distance.getdistance(get[0], get[1] ,get[2] ,get[3])}")
+        print("Do you want to terminate the program Y/y ?.")
+        control = str(input())
         if control == "Y" or control == "y":
             break
         else:
